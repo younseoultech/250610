@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>NOWHERE TO STAY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <h3 class="center wrap topmargin50">갑작스러운 재해, <br>그리고 지금</h3>
+  <img class="full-img sticky-img" src="images/now1.jpg">
+
+  <section class="blackbackground">
+    <div class="center topmargin50 toppadding">
+      <p>
+        익숙했던 집과 마을은 순식간에 붕괴됐다. 
+      </p>
+      <p class="topmargin50">
+        평생 나에게는 이런 상황이 일어나지 않을 것이라 생각했는데... <br>
+        어쩌다 이렇게 된걸까?<br>
+        삶의 터전이자 그동안의 추억이 담겨있는 나의 집을 갑작스레 떠나야 하는 이 상황이 잘 와닿지 않는다. <br>
+        한순간에 일상이 무너지고 뉴스에서만 봤던 기후 난민이 되었다는 사실이 나를 무기력하게 만든다.<br>
+      </p>
+    </div>
+    <p class="click-guide">점 위에 마우스를 올려주세요</p>
+    <div class="botmargin red-dot" id="showInfoDot"></div>
+    <div class="hidden-info" id="hiddenInfoBox">
+      <p>기후 난민이란? <br><br>
+        기후 변화와 지구 온난화의 영향으로 <br>
+        집과 지역 사회를 떠나야 하는 사람들을 일컫는다.<br>
+      해수면 상승, 폭염으로 인한 가뭄과 사막화가 주요 요인이며, <br>
+      산불 및 홍수와 같은 갑작스러운 자연재해를 피해<br>
+      떠나야 하는 사람들(환경 난민)도 포함한다.</p>
+      <p>2023년에 피난을 떠난 수백만 명의 사람들은 '빙산의 일각'에 불과하며, <br>
+        이전과 현재의 갈등, 폭력, 재난으로 인해 이미 피난을 떠난 수천만 명의 국내 실향민에 더해지는 숫자다.</p>
+    </div>
+  </section>
+
+<section class="blackbackground">
+    <div class="center toppadding">
+      <img src="images/now3.jpg" class="w100">
+      <p class="topmargin50 botpad50">
+        다른 이동 수단은 이용할 수 없는 상황이었기에<br>
+        우리 가족은 밤새 비를 맞으며 도보로 이동해야 했다. <br>
+        심지어 몇몇 도로와 다리가 무너져있어 우회해야 했다. 
+      </p>
+    </div>
+  </section>
+
+  <section class="redbackground">
+    <div class="center toppadding">
+      <p class="botpad50">
+        몇 시간 후, 마을에서 가장 가까운 학교 체육관에 도착했다.<br>
+        입구에서 이름과 가족 수를 등록하고, 한참을 기다리니 가족별로 생활 공간이 배정되었다. <br>
+        텐트와 담요, 식수, 위생용품, 간단한 식량을 받으나 우리 가족이 먹기엔 한없이 부족한 양이었다. <br>
+      </p>
+      <img src="images/now2.jpg" class="w100">
+      <p class="topmargin50">
+        체육관은 사람들로 정신없이 북적인다. <br>
+        몇몇은 지쳐 쓰러졌고, <br>
+        몇몇은 가족의 이름을 울부짖으며 눈물흘린다. <br><br>
+        고통과 희망, 절망과 연대가 공존하는 공간이다.
+      </p>
+    </div>
+    <p class="click-guide">점 위에 마우스를 올려주세요</p>
+    <div class="botmargin white-dot" id="showInfoDot"></div>
+    <div class="hidden-info-white" id="hiddenInfoBox">
+      <p> 대피소에서의 삶<br><br>
+        ① &nbsp; 대피소는 대부분 초만원 상태로, 위생과 안전이 제대로 관리되지 않는 경우가 많다. 텐트나 임시 건물은 비바람, 추위, 더위에 취약하며, 도둑이나 해충 문제도 빈번하다.<br><br>
+        ② &nbsp;  대피소에 머무는 기간이 길어지면서, 난민캠프가 사실상 '고향'이 되어버린 경우도 많다. 이는 난민의 사회적·심리적 고립을 더욱 심화시킨다.<br><br>
+        ③ &nbsp;  아이들은 학업을 중단해야 하기 때문에 제대로 된 교육을 받기 어렵다. 장기적으로 아이들의 성장과 발달에 부정적인 영향을 미치기도 한다. <br>
+        
+    </div>
+  </section>
+
+  <div class="redbackground">
+    <div class="home-container wrap">
+        <p>기후난민 아카이브 : 체험과 기록</p>
+        <h1 class="pretandard-h1">기후난민,
+            <br> 그리고 현실의 벽</h1>
+    </div>
+</div>
+
+<div class="white home-content-item1 two-column1 botpad50">
+  <img src="images/now4.jpg" class="left-img">
+  <div class="side-text">
+      <div class="highlight-title">
+        <h2>임시거처와 피난</h2>
+      </div>
+      <p>  
+        장기적으로 임시거처에 머무를 경우, 일자리와 교육 기회가 단절되어 경제적 자립이 어렵고, 사회적 고립감과 정체성 혼란, 우울, 불안, 외상후스트레스장애(PTSD) 등 심리적 문제가 심화됩니다. 
+        난민촌과 임시거처는 대부분 수용국의 가장 열악한 지역에 위치해 있으며,
+        난민들은 기본적인 인권과 권리 보장도 받지 못하는 경우가 많습니다.
+        특히 여성과 아동은 인권 침해와 차별, 성폭력에 쉽게 노출되어 있습니다.
+      </p>
+      <p> 
+        기후난민은 <u>국제난민법상 공식적인 난민 지위를 인정받지 못해 법적 보호와 지원이 제한</u>되며, 
+        이는 장기적으로 불안정한 삶을 유발합니다.
+        또한, 사회적 낙인과 차별, 지역사회의 부정적 여론으로 인해 
+        사회적 통합이 어렵고, 경제적·정서적 고통이 가중됩니다.
+      </p>
+      <p>
+        결국 임시거처와 피난 상황에서 겪는 어려움은 생존과 건강, 심리적 고통, 사회적 차별, 법적 보호 부족, 경제적 자립의 한계 등 다양한 측면에서 나타나며,
+        이는 국제사회와 지역사회의 지속적이고 체계적인 지원이 절실히 필요한 이유입니다.
+        <br>
+      </p>
+  </div>
+
+</div>
+  <section class="white">
+    <div class="center toppadding ">
+      <h2 class="botpad50">난민을 둘러싼 여러가지 오해들</h2>
+      <div class="cards-container ">
+        <div class="card ">
+          <div class="front">기후난민은 내가 사는 곳과 상관없지 않나요? <br>운 좋아서 재해를 피해갈 수도 있는거고... </div>
+          <div class="back">
+            <div>
+              기후난민은 내가 사는 곳과 무관한 일이 아니라, <br>누구에게나 닥칠 수 있는 현실입니다.<br><br>
+재해나 점진적 기후 변화를 '운'으로 피할 수 있다는 생각은 현실과 동떨어진 매우 위험한 판단입니다.
+기후난민 문제는 우리 모두와 밀접하게 관련된 글로벌 이슈이므로, 기후 변화에 대한 인식과 대응이 절실히 필요합니다.
+모두가 예외 없이 기후난민이 될 수 있다는 점을 인식하고, 지구를 지키기 위한 노력이 필요합니다<br>
+            </div>
+            <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1007090819" target="_blank">우리도 언젠가 난민이 될 수 있다고?</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="front">난민은 일 안하고 <br>복지 혜택만 챙겨 먹으려는 도둑들 아닌가요?</div>
+          <div class="back">
+            <div>
+              난민은 오히려 경제와 사회에 기여하는 구성원입니다. <br><br>
+            처음에는 일시적으로 지원이 필요할 수 있지만, 시간이 지나면서 대부분은 스스로 자립하고, 세금을 내며 사회에 뿌리를 내립니다. <br>
+            미국의 경우, 2백만 명이 넘는 난민이 매년 수백억 달러의 세금을 내고, 소비와 투자를 통해 경제를 활성화합니다. 
+            특히 난민은 창업률이 높아, 지역 경제에 새로운 일자리와 활력을 불어넣습니다. 장기적으로 보면 국가 경제에 순기여를 하는 경우가 많다는 것을 자료를 통해 확인할 수 있습니다. <br>
+            </div>
+            <a href="https://www.icmc.net/2020/07/14/refugees-good-or-bad-for-economy/" target="_blank">난민 수용을 통한 경제적 이득</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="front">왜 난민들은 자기 문화와 종교만을 고집하죠? <br>
+          이 사회에 녹아들 생각은 안하는 것 같아요. </div>
+          <div class="back">
+            <div>
+              난민이 자신의 문화를 고집하는 것은 심리적 안정과 정체성 유지, 사회적 고립에 대한 방어 등 자연스러운 인간의 본능에서 비롯된 현상입니다. <br><br>
+            현대 사회에서는 서로의 문화와 종교를 존중하는 다문화 공존이 중요합니다.
+            난민 역시 새로운 사회에 적응하며, 점차 현지 문화와 자신의 문화를 조화롭게 유지하는 경우가 많습니다.<br>
+            </div>
+            <a href="https://journals.sagepub.com/doi/full/10.1177/09240519211033419" target="_blank">국제적으로도 인정받는 권리</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="front">난민은 범죄를 더 많이 저지르지 않나요? <br>
+          난민 때문에 자국민들이 피해보는 상황이 생겨요.</div>
+          <div class="back">
+            <div>
+              난민이 범죄를 더 많이 저지른다는 주장은 사실과 다릅니다. <br><br>
+            대부분의 연구와 데이터는 난민이 범죄율을 높이지 않으며, 범죄를 저질렀을 경우 추방될 위험이 있으므로, 오히려 더 조심하는 경향이 있음을 보여줍니다. 
+            일부 연구에서 범죄 증가가 관찰되더라도, 이는 난민뿐 아니라 지역 사회의 경제적·사회적 변화와도 관련이 있습니다.
+            즉, 난민이 범죄를 더 많이 저지른다는 것은 근거 없는 편견에 가깝습니다.<br>
+            </div>
+            <a href="https://www.jointdatacenter.org/literature_review/do-refugees-cause-crime/" target="_blank">난민 범죄율 관련 보고서</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="front">난민은 왜 가난한 나라엔 안 가죠?</div>
+          <div class="back">
+            <div>
+              난민이 부유한 나라를 찾아 떠나는 것이 아니라, 오히려 대부분의 난민은 가까운 이웃국가로 이동합니다. <br><br>
+            실제로 유엔난민기구(UNHCR)에 따르면, 난민의 대다수( 71% )는 저소득 및 중소득 국가에 수용되어 있습니다. 
+            선진국이나 부유한 국가로 이동하는 것은 법적·경제적 장벽과 사회적 반발로 인해 매우 어렵습니다.<br>
+            </div>
+            <a href="https://www.icmpd.org/blog/2023/a-perfect-storm-of-crises-why-refugee-hosting-countries-need-more-support" target="_blank">난민 이웃국가 관련 기사</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="front">그래봤자 소수 지역과 국가만의 문제 아닌가요?</div>
+          <div class="back">
+            <div>
+              기후난민이나 강제 실향민 문제는 결코 소수 지역이나 국가에 한정된 문제가 아닙니다. <br><br>
+            실제로 최근 통계와 유엔난민기구의 보고서에 따르면, 기후변화와 자연재해로 인한 이주와 피난은 전 세계적으로 빠르게 확산되고 있습니다.
+            2023년 기준 전 세계 강제 실향민(난민, 국내실향민 등 포함) 수는 약 1억 1,730만 명에 달하며, 
+            이는 전 세계 인구 80명 중 1명이 난민 또는 강제실향민에 해당하는 수치입니다.<br>
+            </div>
+            <a href="https://www.unhcr.org/refugee-statistics/" target="_blank">UNHCR 통계</a>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+  <section class="white">
+    <div class="wrap toppadding center">
+    <h2 class="topmargin">기후난민 관련 신기한 사실들</h2>
+  </div>
+    <div class="fact-list">
+      <!-- 항목 1 -->
+      <div class="fact-item">
+        <div class="fact-summary" onclick="toggleFact(this)">
+          <span class="arrow">▶</span>&nbsp; &nbsp; 1. 우리는 기후난민의 후예다.
+        </div>
+        <div class="fact-detail wrap">
+          <iframe width="1000" height="600" src="https://www.youtube.com/embed/9p65iwWclTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="topmargin50 center">한반도에 첫 인류가 도착한 것은 약 2만 5천 년 전으로, 이 시기 한반도는 현재보다 평균 9℃나 낮은 극한의 환경이었습니다. <br>
+          기후 변화(특히 빙하기와 간빙기)에 따라 인류는 생존을 위해 이동했으며, <br>이 과정에서 다양한 인류 집단이 경쟁하고 멸종하며, 최종적으로 호모 사피엔스가 한반도에 정착하게 되었습니다.<br>
+          과거 인류의 이동은 기후 변화에 따른 '기후난민'의 이동이었으며, 이는 오늘날 우리의 뿌리이기도 합니다.</p>
+
+        </div>
+      </div>
+    
+      <!-- 항목 2 -->
+      <div class="fact-item">
+        <div class="fact-summary" onclick="toggleFact(this)">
+          <span class="arrow">▶</span> &nbsp; &nbsp; 2. 기후난민은 사실 '난민'이 아니다.
+        </div>
+        <div class="fact-detail wrap">
+          <img src="images/now5.jpg" class="w100 center">
+          <p class="topmargin50 center"><br>현재 국제법, 즉 1951년 '난민의 지위에 관한 협약'(난민협약)에 따르면, 기후난민은 공식적으로 난민으로 인정받지 못합니다. <br><br>
+            난민협약은 "인종, 종교, 국적, 특정 사회집단의 구성원 신분 또는 정치적 의견을 이유로 박해를 받을 우려가 있다는 합리적인 근거가 있는 공포로 인하여 자신의 국적국 밖에 있는 자로서, 국적국의 보호를 받을 수 없거나 그러한 공포로 인하여 국적국의 보호를 받는 것을 원하지 아니하는 자"를 난민으로 정의합니다.<br>
+            기후 변화로 인한 이주는 이 기준에 부합하지 않으므로, 기후난민은 국제법상 난민 지위를 부여받지 못합니다.<br><br>
+
+            이 때문에 국제사회에서는 '기후난민' 대신 "환경이주민", "기후변화로 인한 강제 실향민" 등으로 부르는 경우가 많습니다.<br>
+기후난민은 법적 보호가 거의 없고, 국제사회에서도 별다른 지원을 받지 못하는 경우가 많아, 사실상 '보이지 않는 난민'으로 남아 있습니다.<br>
+최근에는 기후난민의 인권 보호 필요성이 강조되고 있지만, 아직까지 법적 구속력이 있는 국제 규범이나 조약은 마련되어 있지 않습니다.<br>
+
+          </p>
+          <div class="center">
+          <a href="https://www.unhcr.org/kr/about-unhcr/who-we-are/1951-refugee-convention" target="_blank" >난민 협약</a></div>
+        </div>
+      </div>
+    
+      <!-- 항목 3 -->
+      <div class="fact-item">
+        <div class="fact-summary" onclick="toggleFact(this)">
+          <span class="arrow">▶</span>&nbsp; &nbsp; 3. 기후난민은 국경을 넘지 않고, 자국 내에서만 이동하는 경우가 훨씬 많다.
+        </div>
+        <div class="fact-detail">
+          <img src="images/now6.png" class="w100 center">
+          <p class="topmargin50 center wrap">기후난민의 대부분은 국경을 넘지 않고, 자국 내에서만 이동하는 '국내 실향민'입니다.
+            실제로 유엔난민기구(UNHCR)와 국내실향민모니터링센터(IDMC) 통계에 따르면, 전 세계에서 삶의 터전을 잃고 이동하는 강제 실향민 중 상당수가 국경을 넘지 않고 자국 내에서만 이동하며, 이들의 수는 국제 난민보다 훨씬 많습니다. <br><br>
+            예를 들어, 방글라데시의 경우 해수면 상승 등 기후 변화로 인해 매년 수백만 명이 국내에서 이주하고 있으며, 세계은행은 2050년까지 방글라데시에서만 2천만 명이 집을 잃을 것으로 예측합니다.
+            또한, 연합뉴스 보도에 따르면 2025년 기준 국경을 넘은 난민 및 난민 신청자는 약 4,370만 명인 반면, 자국 내에서 삶의 터전을 잃은 국내실향민은 약 7,210만 명으로, 국내 이동이 국제 이동보다 훨씬 많음을 보여줍니다.</p>
+            <div class="center">
+              <a href="https://www.yna.co.kr/view/AKR20250314074200898" target="_blank">연합뉴스 보도</a>
+              </div>
+        </div>
+      </div>
+    
+      <!-- 항목 4: 영상 요약 -->
+      <div class="fact-item">
+        <div class="fact-summary" onclick="toggleFact(this)">
+          <span class="arrow">▶</span> &nbsp; &nbsp; 4.  기후난민은 전쟁난민보다 더 많다.
+        </div>
+        <div class="fact-detail">
+          <img src="images/now6.png" class="w100 center">
+          <p class="topmargin50 center wrap">2023년 발표된 GRID2023 보고서에 따르면 기후난민은 전쟁난민보다 더 많습니다.<br><br>
+
+            예를 들어, 2022년 기준 자연재해(홍수, 가뭄, 산불 등)로 인해 고향을 떠난 기후난민은 약 3,260만 명으로, 전쟁이나 내전으로 인한 전쟁난민(약 2,830만 명)보다 더 많았습니다.
+            실제로 2022년 전체 자국 내 실향민 중 53%가 기후난민이었고, 이는 전쟁난민 비중보다 높은 수치입니다.
+            
+            또한, 기후난민의 수는 앞으로도 계속 증가할 것으로 예측되고 있습니다.<br><br>
+            국제이주기구(IOM)는 2050년에 전 세계 기후난민이 10억 명에 달할 것이라고 경고하고 있습니다.
+            이처럼 기후난민은 이미 전쟁난민보다 더 많을 뿐만 아니라, 기후 변화가 심화될수록 그 수가 더욱 빠르게 늘어날 것으로 보입니다.</p>
+            <div class="center">
+          <a href="https://www.internal-displacement.org/global-report/grid2023/" target="_blank">보고서 그리드 2023</a>
+          </div>
+        </div>
+      </div>
+
+    <div class="fact-item">
+      <div class="fact-summary" onclick="toggleFact(this)">
+        <span class="arrow">▶</span> &nbsp; &nbsp; 5.  기후난민이 발생한 지역
+      </div>
+      <div class="fact-detail">
+        <section class="infographic-section" style="margin: 80px 0 60px 0;">
+          <div class="center">
+            <h2 style="margin-bottom:2.5rem;" >재해로 인한 난민 통계(2022년)</h2>
+          </div>
+          <div class="map-wrap">
+            <div class="filter-buttons">
+            <button data-filter="all" class="active">전체</button>
+            <button data-filter="홍수">홍수</button>
+             <button data-filter="가뭄">가뭄</button>
+            <button data-filter="태풍">태풍</button>
+          </div>
+
+           
+
+            <div id="map"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  </section>
+
+  <section class="blackbackground">
+<div class="wrap toppadding">
+  <p style="text-align: center; margin-bottom: 40px;">아래 질문들을 천천히 읽어보세요. <br><br>
+    기후난민이 겪는 여정을 떠올리며, 나의 삶과 그들이 어떻게 이어져 있는지 조용히 마음에 담아보는 시간이 되길 바랍니다.<br>
+    그들의 이야기가 내게, 우리 모두에게 어떤 의미로 다가오는지, 잠시 스스로에게 물어보는 시간이 되었으면 합니다.<br>
+    </p>
+<div class="center">
+  <div class="question-box fade-in">
+      <div class="question">우리는 기후난민을 어떻게 바라봐야 할까?</div>
+      <div class="sub-question">그들을 단순히 '남'이나 '불행한 타인'으로 볼 것인가, 아니면 미래의 우리 자신일 수도 있다는 점을 인식할 것인가?</div>
+  </div>
+
+  <div class="question-box fade-in">
+      <div class="question">내가 만약 기후난민이 된다면 어떤 선택을 할 것 인가?</div>
+      <div class="sub-question">고향을 잃고, 모든 것을 뒤로 한 채 떠나야 한다면, 나는 무엇을 선택하고, 어떻게 살아갈 수 있을까?</div>
+  </div>
+
+  <div class="question-box fade-in">
+      <div class="question">기후 변화로 삶의 터전을 잃는 사람들에게 우리는 어떤 책임이 있을까?</div>
+      <div class="sub-question">나는 그들의 고통을 이해하고, 함께 해결책을 모색할 책임이 있다고 느끼는가?</div>
+  </div>
+
+  <div class="question-box fade-in">
+      <div class="question">당신의 집이 한 순간에 사라진다면, 도대체 어디에 소속될 수 있을까?</div>
+      <div class="sub-question">고향을 잃는다는 것은 단순히 집을 떠나는 것이 아니라, 정체성과 소속감까지 잃는 일이 아닐까?</div>
+  </div>
+
+  <div class="question-box fade-in">
+      <div class="question">아직도 나는 지금 이들을 외면하고 있는 건 아닐까?</div>
+      <div class="sub-question">나는 기후난민 문제에 무관심하거나, 그들의 고통을 외면하고 있지는 않은가?</div>
+  </div>
+
+  <div class="question-box fade-in">
+      <div class="question">난민을 단순히 '덩어리'나 '무리'로만 바라보고, 개개인의 삶과 서사는 무시하고 있지 않은가?</div>
+      <div class="sub-question">난민을 익명화하며 비인간화하고, 그들의 다양성과 주체성을 잃게 하고 있지는 않는가?</div>
+  </div>
+</div>
+  <p class="center">우리가 마주한 기후난민의 현실은 먼 미래의 이야기가 아닌 바로 우리의 현재이자 미래입니다. <br>이 질문들이 여러분의 마음에 작은 울림이 되어, 더 나은 내일을 위한 첫걸음이 되기를 바랍니다.</p>
+  <section class="blackbackground topmargin botpad50">  <div style="margin:60px 0 40px 0; text-align:center; color:#888; font-size:1.03rem;">
+    ※ 이 페이지의 모든 통계와 사례는 UNHCR, UNU-EHS, WWF, 국내외 언론 및 공식 보고서를 바탕으로 작성되었습니다.<br>
+    <a href="index.html" style="color:#ff1a1a;font-weight:700;text-decoration:none;">← 기후난민 아카이브 메인으로</a>
+  </div>
+  </div>
+  </section>
+
+ 
+
+
+  </section>
+  
+
+<script>
+  function toggleFact(el) {
+    el.classList.toggle("active");
+    const detail = el.nextElementSibling;
+    const arrow = el.querySelector('.arrow');
+    if (detail.style.maxHeight) {
+      detail.style.maxHeight = null;
+      arrow.style.transform = "rotate(0deg)";
+    } else {
+      detail.style.maxHeight = detail.scrollHeight + "px";
+      arrow.style.transform = "rotate(90deg)";
+    }
+  }
+
+  const map = L.map('map').setView([20, 0], 2);
+
+// 흑백 지도 타일 (Carto)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; CARTO, OpenStreetMap contributors'
+}).addTo(map);
+
+const idpData = [
+  {
+    country: "아프가니스탄",
+    coords: [33, 66],
+    value: 2164000,
+    type: "가뭄",
+    disaster: "극심한 가뭄과 식량난",
+    year: "2022년 상반기"
+  },
+  {
+    country: "파키스탄",
+    coords: [30, 70],
+    value: 8200000,
+    type: "홍수",
+    disaster: "기록적인 홍수",
+    year: "2022년 6~9월"
+  },
+  {
+    country: "필리핀",
+    coords: [13, 122],
+    value: 5400000,
+    type: "태풍",
+    disaster: "강력한 태풍 피해",
+    year: "2022년 9~11월"
+  },
+  {
+    country: "미국",
+    coords: [38, -97],
+    value: 3200000,
+    type: "복합재난",
+    disaster: "허리케인 Ian, 캘리포니아 산불",
+    year: "2022년 하반기"
+  },
+  {
+    country: "나이지리아",
+    coords: [10, 8],
+    value: 2000000,
+    type: "홍수",
+    disaster: "기록적 홍수로 농지 파괴",
+    year: "2022년 7~10월"
+  },
+  {
+  country: "에티오피아",
+  coords: [9, 39],
+  value: 544000,
+  type: "가뭄",
+  disaster: "가뭄과 홍수 중 가뭄이 주요 원인",
+  year: "2022년 전반기"
+},
+  {
+    country: "케냐",
+    coords: [1, 38],
+    value: 373000,
+    type: "가뭄",
+    disaster: "지속적인 가뭄",
+    year: "2022년 전반기"
+  },
+  {
+    country: "남수단",
+    coords: [7.5, 30],
+    value: 665000,
+    type: "홍수",
+    disaster: "반복적 대홍수",
+    year: "2022년 하반기"
+  },
+  {
+    country: "콩고민주공화국",
+    coords: [-1, 23],
+    value: 283000,
+    type: "홍수",
+    disaster: "홍수 및 산사태",
+    year: "2022년 12월"
+  },
+  {
+    country: "수단",
+    coords: [15, 30],
+    value: 227000,
+    type: "홍수",
+    disaster: "홍수로 수천 채 침수",
+    year: "2022년 8~10월"
+  }
+];
+
+function getSeverity(value) {
+  if (value > 2000000) return "매우 심각";
+  if (value > 500000) return "심각";
+  return "보통";
+}
+
+let markers = [];
+
+function createMarker(entry) {
+  const radius = Math.max(10, Math.sqrt(entry.value) / 100); // 더 큰 반지름 차이
+  const marker = L.circleMarker(entry.coords, {
+    radius,
+    color: '#ff0000',
+    fillColor: '#ff0000',
+    fillOpacity: 0.85
+  }).bindPopup(`
+    <strong>${entry.country}</strong><br>
+    실향민 수: ${entry.value.toLocaleString()}명<br>
+    발생 시점: ${entry.year}<br>
+    피해 설명: ${entry.disaster}<br>
+    피해 심각도: ${getSeverity(entry.value)}
+  `);
+  marker.addTo(map);
+  return marker;
+}
+
+function updateMarkers(filter) {
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+  const filtered = filter === 'all' ? idpData : idpData.filter(d => d.type === filter);
+  filtered.forEach(d => markers.push(createMarker(d)));
+}
+
+updateMarkers("all");
+
+document.querySelectorAll(".filter-buttons button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-buttons button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    updateMarkers(btn.getAttribute("data-filter"));
+  });
+});
+
+// onScrollFadeIn 함수 복원 및 수정
+function onScrollFadeIn() {
+  document.querySelectorAll('.fade-in, .question-box').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    // Check if any part of the element is in viewport
+    const isVisible = (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    );
+    
+    if (isVisible) {
+      el.classList.add('visible');
+    } else {
+      // Optional: remove 'visible' class if element scrolls out of view
+      // el.classList.remove('visible');
+    }
+  });
+}
+
+// Listen for scroll and resize events
+window.addEventListener('scroll', onScrollFadeIn);
+window.addEventListener('resize', onScrollFadeIn);
+
+// Initial check on page load
+document.addEventListener('DOMContentLoaded', onScrollFadeIn);
+</script>
+</body>
+</html>
